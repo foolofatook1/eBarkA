@@ -398,8 +398,9 @@ function chooseProfile() {
     textSize(50);
     fill(5, 255, 34);
     //high score
-    // text('High Score: ', 10, 475);
-    //text(highScore(scores), 225, 475);
+    text('Go on a date with your High Score: ', 10, 450);
+    scores = [miloPoints, chouChouPoints, soupPoints, baguettePoints, demitriPoints, maxPoints];
+    text(highScore(scores), 675, 450);
     //header
     text('Date Scores: ', 10, 500);
     //milo chart
@@ -1207,15 +1208,17 @@ function keyPressed() {
 function keyReleased() {
     paddle_step = 0;
 }
-//function highScore(input) {
-//    var l = 0;
-//    for (i = 0; i <= input.length; i++) {
-//        if (input[i] > l) {
-//            l = input[i];
-//        }
-//    }
-//    return l;
-//}
+
+function highScore(input) {
+    var l = 0;
+    for (i = 0; i <= input.length; i++) {
+        if (input[i] > l) {
+            l = input[i];
+        }
+    }
+    return l;
+}
+
 function reset() {
     ball_x = random(ball_r, width - ball_r);
     ball_y = random(ball_r, height / 2);
